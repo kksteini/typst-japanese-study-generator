@@ -20,14 +20,17 @@ json["words"].each do |word|
             next
         end
 
-        bingo[kana].push({"meaning" => meaning})
+        bingo[kana].push({"meaning" => meaning, "kana" => kana})
     else
         kanji = word["kanji"][0]["text"]
         if bingo[kanji].nil? then
             bingo[kanji] = []
         end
         bingo[kanji].push({"meaning" => meaning, "kana" => kana})
-        bingo[kana].push({"meaning" => meaning, "kanji" => kanji})
+        if bingo[kana].empty? then
+            bingo[kana].push({"meaning" => meaning, "kana" => kana})
+        end
+
     end
 end
 

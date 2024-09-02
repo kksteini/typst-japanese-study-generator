@@ -1,12 +1,5 @@
 #let jmdict(key) = {
-  let dictionary_lookup = json("../jmdict-simple-lookup.json").at(key)
-
-
-  [== #key \ ]
-  for entry in dictionary_lookup {
-      [- #entry.at("kana", default: "") -- #entry.at("meaning") \ ]
-  }
-
+  return json("../jmdict-simple-lookup.json").at(key, default: "")
 }
 
 #let jmdict_exists(key) = {
