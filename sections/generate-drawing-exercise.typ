@@ -21,11 +21,12 @@
         )
         #place(
           center,
+          dy: 3pt,
           [
             #if item == 1 {
-              [#text(size: 50pt, font: "KanjiStrokeOrders", character)]
+              [#text(size: 42pt, font: "KanjiStrokeOrders", character)]
             } else if item == 2 {
-               [#text(size: 50pt, gray, font: "KanjiStrokeOrders", character)]
+               [#text(size: 42pt, gray, font: "KanjiStrokeOrders", character)]
 
             }
           ]
