@@ -1,4 +1,4 @@
-#import "../utils/dictionary-lookup.typ" : *
+#import "../utils/dictionary-lookup.typ" : jmdict, jmdict_exists
 #let morphemiser = plugin("../plugins/morphemizer.wasm")
 
 #let generate_vocabulary(sentence) = {
