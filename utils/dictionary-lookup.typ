@@ -1,17 +1,20 @@
+#let dictionary = json("../jmdict-simple-lookup.json")
+#let rtk_dictionary = json("../rtk-simple-lookup.json")
+
 #let jmdict(key) = {
-  return json("../jmdict-simple-lookup.json").at(key, default: "")
+  return dictionary.at(key, default: "")
 }
 
 #let jmdict_exists(key) = {
-    let dictionary_lookup = json("../jmdict-simple-lookup.json").at(key, default: ())
+    let dictionary_lookup = dictionary.at(key, default: ())
     return dictionary_lookup.len() > 0
 }
 
 #let rtk(key) = {
-  return json("../rtk-simple-lookup.json").at(key, default: "")
+  return rtk_dictionary.at(key, default: "")
 }
 
 #let rtk_exists(key) = {
-    let dictionary_lookup = json("../rtk-simple-lookup.json").at(key, default: ())
+    let dictionary_lookup = rtk_dictionary.at(key, default: ())
     return dictionary_lookup.len() > 0
 }
